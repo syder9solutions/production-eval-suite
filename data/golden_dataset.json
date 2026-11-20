@@ -1,0 +1,130 @@
+[
+  {
+    "id": "tc-01",
+    "prompt": "What are the election timeout bounds in Raft to avoid split votes?",
+    "reference_context": "Election timeouts are randomized between 150ms and 300ms across peers to avoid split-vote scenarios.",
+    "is_answerable": true,
+    "expected_verdicts": {
+      "baseline": 1,
+      "regressed": 0,
+      "improved": 1
+    },
+    "answers": {
+      "baseline": "Raft uses randomized election timeouts between 150ms and 300ms to avoid split votes.",
+      "regressed": "Raft election timeouts are fixed at 1000ms across all cluster servers.",
+      "improved": "Raft election timeouts are randomized between 150ms and 300ms across peers to avoid split-vote scenarios."
+    }
+  },
+  {
+    "id": "tc-02",
+    "prompt": "What does Kubernetes container Exit Code 137 indicate?",
+    "reference_context": "Exit Code 137 indicates SIGKILL by Linux OOM killer when resources.limits.memory is exceeded.",
+    "is_answerable": true,
+    "expected_verdicts": {
+      "baseline": 1,
+      "regressed": 0,
+      "improved": 1
+    },
+    "answers": {
+      "baseline": "Exit Code 137 indicates container SIGKILL by Linux OOM killer when resources.limits.memory exceeded.",
+      "regressed": "Exit Code 137 means network connection was forcibly reset by upstream firewall.",
+      "improved": "Exit Code 137 indicates SIGKILL invoked by the Linux OOM killer when resources.limits.memory is exceeded."
+    }
+  },
+  {
+    "id": "tc-03",
+    "prompt": "How do you bake gluten-free chocolate chip cookies?",
+    "reference_context": "This technical documentation covers distributed systems, Raft, Kubernetes, and PostgreSQL.",
+    "is_answerable": false,
+    "expected_verdicts": {
+      "baseline": 1,
+      "regressed": 0,
+      "improved": 1
+    },
+    "answers": {
+      "baseline": "I cannot answer this question based on the provided documentation. The corpus does not contain culinary information.",
+      "regressed": "To bake cookies, preheat oven to 350F and mix almond flour with chocolate chips.",
+      "improved": "I cannot answer this question based on the provided documentation. The documentation does not contain details regarding cookie recipes."
+    }
+  },
+  {
+    "id": "tc-04",
+    "prompt": "What was the root cause of incident INC-4921?",
+    "reference_context": "Incident INC-4921 was triggered by a 200ms latency spike in Redis causing unjittered client retries that exhausted PostgreSQL connections on PgBouncer.",
+    "is_answerable": true,
+    "expected_verdicts": {
+      "baseline": 1,
+      "regressed": 0,
+      "improved": 1
+    },
+    "answers": {
+      "baseline": "INC-4921 was triggered by Redis latency spike causing unjittered retries that exhausted PgBouncer connections.",
+      "regressed": "INC-4921 was caused by expired TLS certificates on the gateway.",
+      "improved": "Incident INC-4921 was triggered by a 200ms latency spike in Redis causing unjittered client retries that exhausted PostgreSQL connections on PgBouncer."
+    }
+  },
+  {
+    "id": "tc-05",
+    "prompt": "Under Cgroups v2, what is the role of memory.high?",
+    "reference_context": "memory.high is a throttling boundary where processes are forced into synchronous direct memory reclamation.",
+    "is_answerable": true,
+    "expected_verdicts": {
+      "baseline": 1,
+      "regressed": 0,
+      "improved": 1
+    },
+    "answers": {
+      "baseline": "memory.high is a throttling boundary forcing processes into synchronous direct reclamation.",
+      "regressed": "memory.high terminates the pod immediately with exit code 9.",
+      "improved": "Under Cgroups v2, memory.high is a throttling boundary where processes are forced into synchronous direct memory reclamation."
+    }
+  },
+  {
+    "id": "tc-06",
+    "prompt": "What is the difference between synchronous_commit on and remote_apply in PostgreSQL?",
+    "reference_context": "remote_apply ensures WAL is received, flushed, and applied to the standby state machine, eliminating read-your-writes lag.",
+    "is_answerable": true,
+    "expected_verdicts": {
+      "baseline": 1,
+      "regressed": 0,
+      "improved": 1
+    },
+    "answers": {
+      "baseline": "remote_apply ensures WAL is applied to standby state machine, eliminating read-your-writes lag.",
+      "regressed": "synchronous_commit on writes to disk, while remote_apply only writes to memory buffer.",
+      "improved": "remote_apply ensures WAL is received, flushed, and applied to the standby state machine, eliminating read-your-writes lag."
+    }
+  },
+  {
+    "id": "tc-07",
+    "prompt": "What tax deductions apply to home offices in Ireland?",
+    "reference_context": "The corpus strictly covers SRE, Raft, Kubernetes, and PostgreSQL.",
+    "is_answerable": false,
+    "expected_verdicts": {
+      "baseline": 1,
+      "regressed": 0,
+      "improved": 1
+    },
+    "answers": {
+      "baseline": "I cannot answer this question based on the provided documentation.",
+      "regressed": "In Ireland, employees working from home can claim 32% of heating and electricity costs.",
+      "improved": "I cannot answer this question based on the provided documentation. The corpus contains systems documentation and does not cover Irish tax laws."
+    }
+  },
+  {
+    "id": "tc-08",
+    "prompt": "What circuit breaker settings were configured in Envoy following INC-4921?",
+    "reference_context": "Envoy circuit breaker parameters: max_connections: 400, max_pending_requests: 100, consecutive_5xx: 5.",
+    "is_answerable": true,
+    "expected_verdicts": {
+      "baseline": 1,
+      "regressed": 0,
+      "improved": 1
+    },
+    "answers": {
+      "baseline": "Envoy circuit breakers were set to max_connections: 400, max_pending_requests: 100, and consecutive_5xx: 5.",
+      "regressed": "Circuit breakers were configured to timeout after 30 seconds with 10 retries.",
+      "improved": "Envoy circuit breaker parameters: max_connections: 400, max_pending_requests: 100, consecutive_5xx: 5."
+    }
+  }
+]
